@@ -39,7 +39,6 @@ public class ValidationEngineTest {
         final IgLoader igLoader = validationEngineInitialization.igLoader;
 
 
-
         LoadIGs.loadIG(validationEngine,igLoader,packageTgz.getAbsolutePath());
 
         // Prepare the ValidationEngine.

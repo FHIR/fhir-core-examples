@@ -19,8 +19,9 @@
         <maven.compiler.testTarget>11</maven.compiler.testTarget>
         <junit-jupiter.version>5.9.0</junit-jupiter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <okhttp.version>4.9.3</okhttp.version>
-        <org.hl7.fhir.core.version>6.3.32</org.hl7.fhir.core.version>
+        <okhttp.version>4.11.0</okhttp.version>
+        <commons_io_version>2.17.0</commons_io_version>
+        <org.hl7.fhir.core.version>6.5.5</org.hl7.fhir.core.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,11 @@
             <groupId>ca.uhn.hapi.fhir</groupId>
             <artifactId>org.hl7.fhir.validation</artifactId>
             <version>${org.hl7.fhir.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons_io_version}</version>
         </dependency>
 
         <dependency>
