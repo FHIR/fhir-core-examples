@@ -1,7 +1,8 @@
 package org.hl7.fhir.examples.validation;
 
-import org.hl7.fhir.r5.conformance.R5ExtensionsLoader;
-import org.hl7.fhir.r5.context.SystemOutLoggingService;
+import lombok.extern.slf4j.Slf4j;
+import org.hl7.fhir.r5.context.Slf4JLoggingService;
+
 import org.hl7.fhir.utilities.TimeTracker;
 import org.hl7.fhir.utilities.VersionUtilities;
 import org.hl7.fhir.validation.IgLoader;
@@ -10,6 +11,7 @@ import org.hl7.fhir.validation.ValidationEngine;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+@Slf4j
 public class ValidationEngineInitialization {
 
     final ValidationEngine validationEngine;
@@ -28,6 +30,7 @@ public class ValidationEngineInitialization {
      * @throws IOException        If creation of the {@link ValidationEngine} fails.
      * @throws URISyntaxException If creation of the {@link ValidationEngine} fails.
      */
+
     public static ValidationEngineInitialization buildValidationEngine(
             final String fhirVersion
     )
@@ -53,7 +56,7 @@ public class ValidationEngineInitialization {
         );
 
         validationEngine.setDebug(false);
-        validationEngine.getContext().setLogger(new SystemOutLoggingService(false));
+        validationEngine.getContext().setLogger(new Slf4JLoggingService(log));
         
 
         IgLoader igLoader = LoadIGs.getIGLoaderForEngine(validationEngine);
